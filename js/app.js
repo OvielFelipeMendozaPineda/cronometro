@@ -2,24 +2,20 @@ const timerText = document.querySelector('#timerText');
 const stops = document.querySelector('#stops');
 const plays = document.querySelector('#plays');
 const resets = document.querySelector('#resets');
-let arrayTimerText = Array(...timerText.textContent);
 let clicks = 0;
 let pattern = /[0-9]/;
 let segundos = 0;
 let minutos = "00";
 let horas = "00";
 let cont = 0;
-arrayTimerText = arrayTimerText.filter(x => {if (x.match(pattern)){
-    return x;
-}})
+
 let parar;
 /**
  * Calcula los segundos, minutos y horas con base al contador.
- * @param {Array} arrayTimerText 
  * @returns El avance del contador en HTML.
  * 
  */
-function cronometro(arrayTimerText) {
+function cronometro() {
     cont++
     segundos = cont % 60 < 10? '0' + cont: cont;
     if (cont == 60) {
@@ -54,14 +50,13 @@ resets.addEventListener("click", ()=> {
     clicks = 0;
     }
 )
-// plays.addEventListener("click", ()=> parar = setInterval(() => cronometro(arrayTimerText), 1000))
 plays.addEventListener("click", ()=> {
     clicks++
     if (clicks > 1) {
         return 
     }
     else {
-        parar = setInterval(() => cronometro(arrayTimerText), 1000);
+        parar = setInterval(() => cronometro(), 1000);
     }
     } 
 );
