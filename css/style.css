@@ -51,9 +51,10 @@ body{
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
+    width: 100%;
 }
 .timer p{
-    font-size: clamp(2.7rem, 10vw, 7rem);
+    font-size: clamp(1rem, 10vw, 7rem);
 }
 header{
     width: 100%;
@@ -71,7 +72,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(0.7rem, 2vw, 2rem);
     margin-left: 2rem;
 }
 .links{
